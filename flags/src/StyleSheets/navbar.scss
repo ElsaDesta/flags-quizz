@@ -1,0 +1,53 @@
+img {
+  width: 20px;
+}
+
+.top-nav {
+  overflow: hidden;
+  margin-top: 0;
+  
+}
+
+.home-nav,
+.link-nav,
+.play-nav,
+.quit-nav {
+  float: left;
+  cursor: pointer;
+
+  color: #262626;
+  padding: 12px 16px;
+
+  &:hover {
+    background-color: #f2ae2e;
+  }
+  &:active {
+    background-color: #f2ae2e;
+  }
+}
+
+.play-nav,
+.quit-nav,
+.link-nav {
+  display: none;
+}
+
+.menu-icon {
+  float: right;
+  display: block;
+
+  cursor: pointer;
+  background-color: #fffbfb;
+
+  padding: 12px 16px;
+  
+
+  text-decoration: none;
+  color: black;
+  &:hover {
+    background-color: #f2ae2e;
+  }
+  &:active {
+    background-color: #f2ae2e;
+  }
+}
