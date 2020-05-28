@@ -24,13 +24,13 @@ export default class App extends Component {
         <div className="app-wrapper">
           <Navbar onClick={this.handleOpen} opened={this.state.opened} />
           <Switch>
-            
              <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/home">
+             <Route path="/home">
               <Home />
             </Route>
+           
             <Route path="/trivia">
               <Trivia2 />
             </Route>
