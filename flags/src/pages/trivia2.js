@@ -28,8 +28,6 @@ export class Trivia2 extends Component {
   }
 
   handleNextQuestion = () => {
-  
-
     if (this.state.selectedIndex === this.state.question.length - 1) {
       this.setState({ flash: "game over!", score: this.props.answer.length });
       this.props.resetStore();
@@ -82,12 +80,7 @@ export class Trivia2 extends Component {
           }}
         >
           {" "}
-          <Button
-            onClick={this.handleNextQuestion}
-            style={{
-              display: this.state.flash === "game over!" ? "none" : "block",
-            }}
-          />
+          <Button onClick={this.handleNextQuestion} />
         </div>
 
         <div
@@ -98,7 +91,10 @@ export class Trivia2 extends Component {
         >
           <h1 className="score">
             {" "}
-            You scored: <span>{this.state.score} / {this.state.question.length} </span>
+            You scored:{" "}
+            <span>
+              {this.state.score} / {this.state.question.length}{" "}
+            </span>
           </h1>
         </div>
       </div>
