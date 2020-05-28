@@ -28,6 +28,9 @@ export default class App extends Component {
              <Route exact path="/">
               <Home />
             </Route>
+             <Route exact path="/home">
+              <Home />
+            </Route>
             <Route path="/trivia">
               <Trivia2 />
             </Route>
