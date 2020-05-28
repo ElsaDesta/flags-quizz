@@ -9,7 +9,7 @@ import play from "../images/play.png";
 const Navbar = (props) => {
   return (
     <div className="top-nav">
-      <Link className="home-nav" to="/">
+      <Link className="home-nav" to="/home">
         <img src={home} alt="home-icon" />
       </Link>
 
