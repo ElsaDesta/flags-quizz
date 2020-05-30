@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "163b4b6a6fd0ce6a1b88ed57dad61116",
+    "revision": "f94e807f7bff18503c21934926dad03d",
     "url": "/flags-quizz/index.html"
   },
   {
-    "revision": "1cc906c617a36c1f0a37",
+    "revision": "320ef1f52f99902238f4",
     "url": "/flags-quizz/static/css/main.713083bb.chunk.css"
   },
   {
-    "revision": "8c4a62505320cdeee83d",
-    "url": "/flags-quizz/static/js/2.50ab671b.chunk.js"
+    "revision": "358945b73c6f8319b086",
+    "url": "/flags-quizz/static/js/2.fd625b5f.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/flags-quizz/static/js/2.50ab671b.chunk.js.LICENSE.txt"
+    "url": "/flags-quizz/static/js/2.fd625b5f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1cc906c617a36c1f0a37",
-    "url": "/flags-quizz/static/js/main.5f4cd8af.chunk.js"
+    "revision": "320ef1f52f99902238f4",
+    "url": "/flags-quizz/static/js/main.607e51d5.chunk.js"
   },
   {
     "revision": "e130f6dd6fe6988c3127",
@@ -54,6 +54,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1b9b5f581173c1ce717361960afdc6dc",
     "url": "/flags-quizz/static/media/ao.1b9b5f58.svg"
+  },
+  {
+    "revision": "de003fa2464539ff3469796465df9be1",
+    "url": "/flags-quizz/static/media/ga.de003fa2.svg"
+  },
+  {
+    "revision": "f549eff9b02bbc701e0bb1bf948b114b",
+    "url": "/flags-quizz/static/media/mc.f549eff9.svg"
   },
   {
     "revision": "f66c042c51d54bae0f1f6f1e52b75658",
