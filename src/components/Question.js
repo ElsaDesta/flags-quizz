@@ -1,9 +1,6 @@
 import React from "react";
 
 
-
-
-
  const QuestionBody = (props) => {
     const isAnswered = props.isAnswered;
    const flash = props.flash;
