@@ -7,7 +7,7 @@ import Albania from "../images/svg/al.svg";
 import Armenia from "../images/svg/am.svg";
 import Angola from "../images/svg/ao.svg";
 import Gabon from "../images/svg/ga.svg";
-import Monaco from "../images/svg/mc.svg";
+import Ukraine from "../images/svg/ua.svg";
 
 
 export const data = [ 
@@ -91,11 +91,11 @@ export const data = [
         "D": "Cameroon",
         "answer": "Gabon"},
 
-        {question : Monaco ,
+        {question : Ukraine ,
           "A": "Latvia",
           "B": "Nauru",
           "C": "Moldova",
-          "D": "Monaco",
-          "answer": "Monaco"} 
+          "D": "Ukraine",
+          "answer": "Ukraine"} 
 
 ]
