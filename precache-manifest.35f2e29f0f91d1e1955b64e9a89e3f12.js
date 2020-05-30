@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f94e807f7bff18503c21934926dad03d",
+    "revision": "4a604cf080f2916a0afd1896569c2d08",
     "url": "/flags-quizz/index.html"
   },
   {
-    "revision": "320ef1f52f99902238f4",
+    "revision": "9926308b14f6c12c573f",
     "url": "/flags-quizz/static/css/main.713083bb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flags-quizz/static/js/2.fd625b5f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "320ef1f52f99902238f4",
-    "url": "/flags-quizz/static/js/main.607e51d5.chunk.js"
+    "revision": "9926308b14f6c12c573f",
+    "url": "/flags-quizz/static/js/main.a814c408.chunk.js"
   },
   {
     "revision": "e130f6dd6fe6988c3127",
@@ -60,11 +60,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flags-quizz/static/media/ga.de003fa2.svg"
   },
   {
-    "revision": "f549eff9b02bbc701e0bb1bf948b114b",
-    "url": "/flags-quizz/static/media/mc.f549eff9.svg"
-  },
-  {
     "revision": "f66c042c51d54bae0f1f6f1e52b75658",
     "url": "/flags-quizz/static/media/play.f66c042c.png"
+  },
+  {
+    "revision": "1975696585b673672d8aa5fabf8b47d3",
+    "url": "/flags-quizz/static/media/ua.19756965.svg"
   }
 ]);
