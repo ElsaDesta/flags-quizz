@@ -3,12 +3,24 @@ import React from "react";
 const Button = (props) => {
   
   return (
-    <div  className="next_component">
+    
       <button className="btn_next" onClick={props.onClick}>
-        NEXT
+        Next
       </button>
-    </div>
+    
   );
 };
 
 export default Button;
+
+export const Button2 = (props) => {
+  return (
+   
+      <button className="btn_next" onClick={props.onClick}>
+        Hint
+      </button>
+    
+  )
+};
+
+
