@@ -4,22 +4,26 @@ const QuestionBody = (props) => {
   const isAnswered = props.isAnswered;
   const flash = props.flash;
   const isHelp = props.isHelp;
-  
- 
-  
+
   return (
     <div className="game_wrapper">
       <div className="header_component">
-        <h2 className="starter_h">LETS PLAY!</h2>
+        <h2 >LET'S PLAY!</h2>
       </div>
       <div className="question_component">
         <img className="flag" src={props.question} alt="icon-flag-country" />
       </div>
-       <p className="hint" style={{ display: isHelp === false || isAnswered === true ? "none" : "flex" }} > {props.hint1} </p>
-          
-      <div className="answer_component_wrapp">
+      <p
+        className="hint"
+        style={{
+          display: isHelp === false || isAnswered === true ? "none" : "flex",
+        }}
+      >
+        {" "}
+        {props.hint1}{" "}
+      </p>
+     
         <div className="answer_component">
-         
           <h3 className="flash">{props.flash}</h3>
           <div
             style={{
@@ -78,7 +82,7 @@ const QuestionBody = (props) => {
             </button>
           </div>
         </div>
-      </div>
+      
     </div>
   );
 };
