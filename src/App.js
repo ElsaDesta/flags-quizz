@@ -1,6 +1,5 @@
 import "./StyleSheets/global.scss";
 import Home from "./pages/Home";
-import "./StyleSheets/App.scss";
 import Navbar from "./components/Navbar";
 import Trivia2 from "./pages/trivia2";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
