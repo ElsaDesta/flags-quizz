@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d100f72ba70b45ec0e6e8ec5903d0cfb",
+    "revision": "770d160906133d5ae28273900b8fd09e",
     "url": "/flags-quizz/index.html"
   },
   {
-    "revision": "eef3a85bf25ec4d335c7",
-    "url": "/flags-quizz/static/css/main.d8eefb1b.chunk.css"
+    "revision": "02f2f2ca4b652d54b0eb",
+    "url": "/flags-quizz/static/css/main.101a1281.chunk.css"
   },
   {
-    "revision": "358945b73c6f8319b086",
-    "url": "/flags-quizz/static/js/2.fd625b5f.chunk.js"
+    "revision": "0f37de942ae1d1708a1f",
+    "url": "/flags-quizz/static/js/2.d1e97e34.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/flags-quizz/static/js/2.fd625b5f.chunk.js.LICENSE.txt"
+    "url": "/flags-quizz/static/js/2.d1e97e34.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "eef3a85bf25ec4d335c7",
-    "url": "/flags-quizz/static/js/main.f2e9dcb5.chunk.js"
+    "revision": "02f2f2ca4b652d54b0eb",
+    "url": "/flags-quizz/static/js/main.511d6cfb.chunk.js"
   },
   {
     "revision": "e130f6dd6fe6988c3127",
