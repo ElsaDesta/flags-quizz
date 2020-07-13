@@ -13,15 +13,12 @@ const QuestionBody = (props) => {
       <div className="question_component">
         <img className="flag" src={props.question} alt="icon-flag-country" />
       </div>
-      <p
-        className="hint"
-        style={{
-          display: isHelp === false || isAnswered === true ? "none" : "flex",
-        }}
-      >
-        {" "}
-        {props.hint1}{" "}
-      </p>
+     
+      <div style={{ visibility: flash === "game over!" && "hidden"}}
+       className="btn_hint" onMouseEnter={props.onMouseEnter} >
+        <span className="hint-icon">?!</span>
+        <span className="hint">{props.hint1}</span>
+      </div>
      
         <div className="answer_component">
           <h3 className="flash">{props.flash}</h3>
