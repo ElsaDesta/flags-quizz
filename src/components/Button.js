@@ -16,7 +16,7 @@ export default Button;
 export const Button2 = (props) => {
   return (
    
-      <button className="btn_next" onClick={props.onClick}>
+      <button className="btn_hint" onClick={props.onClick}>
         Hint
       </button>
     

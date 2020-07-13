@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../StyleSheets/trivia.scss";
 import Button from "../components/Button";
-import { Button2 } from "../components/Button";
+import AnswerButton from "../components/AnswerButton";
 import QuestionBody from "../components/Question";
 import { data } from "../API/data";
 import { addAnswer } from "../action";
@@ -30,7 +30,7 @@ export class Trivia2 extends Component {
     this.getData();
 
     if (this.state.selectedIndex === this.state.question.length) {
-      setInterval(this.count(), 50);
+      setInterval(this.count(), 1000);
     }
   }
 
@@ -46,7 +46,7 @@ export class Trivia2 extends Component {
   count() {
     setInterval(() => {
       this.counter();
-    }, 1000);
+    }, 600);
   }
 
   handleNextQuestion = () => {
@@ -91,7 +91,7 @@ export class Trivia2 extends Component {
 
   render() {
     let { selectedIndex } = this.state;
-      return (
+        return (
       <div className="main_wrapper">
         {this.state.question ? (
           <QuestionBody
@@ -100,6 +100,7 @@ export class Trivia2 extends Component {
             flash={this.state.flash}
             isHelp={this.state.isHelp}
             {...this.state.question[selectedIndex]}
+            onMouseEnter={this.handleHint} 
           />
         ) : (
           <QuestionBody />
@@ -110,8 +111,9 @@ export class Trivia2 extends Component {
             display: this.state.flash === "game over!" ? "none" : "flex",
           }}
         >
-          <Button2 onClick={this.handleHint} isHelp={this.state.isHelp} />
           <Button onClick={this.handleNextQuestion} />
+         
+         
         </div>
 
         <div
