@@ -50,7 +50,6 @@ export class Trivia2 extends Component {
   }
 
   handleNextQuestion = () => {
-    
     if (this.state.selectedIndex === this.state.question.length - 1) {
       this.setState({ flash: "game over!" });
       this.props.resetStore();
@@ -91,7 +90,7 @@ export class Trivia2 extends Component {
 
   render() {
     let { selectedIndex } = this.state;
-        return (
+    return (
       <div className="main_wrapper">
         {this.state.question ? (
           <QuestionBody
@@ -100,7 +99,7 @@ export class Trivia2 extends Component {
             flash={this.state.flash}
             isHelp={this.state.isHelp}
             {...this.state.question[selectedIndex]}
-            onMouseEnter={this.handleHint} 
+            onMouseEnter={this.handleHint}
           />
         ) : (
           <QuestionBody />
@@ -112,10 +111,7 @@ export class Trivia2 extends Component {
           }}
         >
           <Button onClick={this.handleNextQuestion} />
-         
-         
         </div>
-
         <div
           className="score-board"
           style={{
