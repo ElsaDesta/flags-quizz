@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../StyleSheets/trivia.scss";
 import Button from "../components/Button";
-import AnswerButton from "../components/AnswerButton";
 import QuestionBody from "../components/Question";
 import { data } from "../API/data";
 import { addAnswer } from "../action";
