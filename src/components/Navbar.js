@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../StyleSheets/navbar.scss";
 import home from "../images/home.png";
 import linkedin from "../images/linkedin-sign.png";
-import menu from "../images/menu-icon.png";
 import play from "../images/play.png";
 
 const Navbar = (props) => {

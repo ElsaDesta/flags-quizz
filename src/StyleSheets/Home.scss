@@ -1,7 +1,6 @@
 button {
   border: none;
 }
-
 .home-game_wrapper {
   display: flex;
   width: 100%;
@@ -10,7 +9,6 @@ button {
   align-content: center;
   flex-direction: column;
 }
-
 .home-header_component {
   display: flex;
   border-bottom: 4px solid #fffbfb;
@@ -21,7 +19,6 @@ button {
   align-items: center;
   justify-content: center;
 }
-
 .home-starter_h {
   font-family: "Space Mono";
   font-size: 1.7rem;
@@ -36,7 +33,7 @@ button {
   padding-top: 15px;
   font-weight: 400;
   font-size: 1.2rem;
-  color: #262626;  
+  color: #262626;
 }
 
 .home-question span {
