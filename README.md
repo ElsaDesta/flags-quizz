@@ -1,6 +1,6 @@
 
 
-# flags-quizz
+# flags-quizz   [![CodeFactor](https://www.codefactor.io/repository/github/elsadesta/flags-quizz/badge)](https://www.codefactor.io/repository/github/elsadesta/flags-quizz)
 Flags quiz created with react and redux, using svg images.
 https://elsadesta.github.io/flags-quizz/
 
