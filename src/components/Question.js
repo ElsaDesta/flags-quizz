@@ -3,13 +3,13 @@ import React from "react";
 const QuestionBody = (props) => {
   const isAnswered = props.isAnswered;
   const flash = props.flash;
-  
+
+
 
   return (
     <div className="game_wrapper">
       <div className="header_component">
-        <h2>LET'S PLAY!</h2>
-      </div>
+        </div>
       <div className="question_component">
         <img className="flag" src={props.question} alt="icon-flag-country" />
       </div>
@@ -25,6 +25,7 @@ const QuestionBody = (props) => {
 
       <div className="answer_component">
         <h3 className="flash">{props.flash}</h3>
+        {}
         <div
           style={{
             display: isAnswered || flash === "game over!" ? "none" : "block",

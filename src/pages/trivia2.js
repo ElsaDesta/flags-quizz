@@ -3,9 +3,11 @@ import "../StyleSheets/trivia.scss";
 import Button from "../components/Button";
 import QuestionBody from "../components/Question";
 import { data } from "../API/data";
-import { addAnswer } from "../action";
 import { connect } from "react-redux";
-import { resetStore } from "../action";
+import { removeUsedCountry } from "../action";
+import { addUsedCountry } from "../action";
+import { countScore } from "../action";
+
 
 export class Trivia2 extends Component {
   state = {
@@ -16,6 +18,7 @@ export class Trivia2 extends Component {
     score: 0,
     finalScore: 0,
     isHelp: false,
+    image1: "",
   };
 
   getData = () => {
@@ -28,30 +31,11 @@ export class Trivia2 extends Component {
   componentDidMount() {
     this.getData();
 
-    if (this.state.selectedIndex === this.state.question.length) {
-      setInterval(this.count(), 1000);
-    }
-  }
-
-  counter = () => {
-    if (
-      this.state.finalScore < this.state.score &&
-      this.state.selectedIndex === this.state.question.length - 1
-    ) {
-      this.setState({ finalScore: this.state.finalScore + 1 });
-    }
-  };
-
-  count() {
-    setInterval(() => {
-      this.counter();
-    }, 600);
   }
 
   handleNextQuestion = () => {
     if (this.state.selectedIndex === this.state.question.length - 1) {
       this.setState({ flash: "game over!" });
-      this.props.resetStore();
     } else {
       this.setState((prevState) => ({
         selectedIndex: prevState.selectedIndex + 1,
@@ -60,7 +44,6 @@ export class Trivia2 extends Component {
         isAnswered: false,
         flash: "",
         isHelp: false,
-        score: this.props.answer.length,
       });
     }
   };
@@ -79,7 +62,7 @@ export class Trivia2 extends Component {
     //check if value of clicked button is equal to the value of the correct answer
     if (event.target.value === this.state.question[selectedIndex].answer) {
       //adds the value of the correct answer to redux store
-      this.props.addAnswer(event.target.value);
+      this.props.countScore();
 
       this.setState({ flash: "CORRECT!" });
     } else {
@@ -91,18 +74,31 @@ export class Trivia2 extends Component {
     let { selectedIndex } = this.state;
     return (
       <div className="main_wrapper">
-        {this.state.question ? (
-          <QuestionBody
-            onClick={this.handleAnswerInput}
-            isAnswered={this.state.isAnswered}
-            flash={this.state.flash}
-            isHelp={this.state.isHelp}
-            {...this.state.question[selectedIndex]}
-            onMouseEnter={this.handleHint}
-          />
-        ) : (
-          <QuestionBody />
-        )}
+        <div className="top_wrapper">
+          <div className="top_right">
+            <h3>Score:{this.props.score}</h3>{" "}
+          </div>
+          <div className="top_left">
+            {" "}
+            <h3>
+              {selectedIndex + 1}/{this.state.question.length}
+            </h3>{" "}
+          </div>
+        </div>
+
+        <QuestionBody
+          onClick={this.handleAnswerInput}
+          isAnswered={this.state.isAnswered}
+          flash={this.state.flash}
+          isHelp={this.state.isHelp}
+          {...this.state.question[selectedIndex]}
+          onMouseEnter={this.handleHint}
+        />
+
+        {this.state.image1 ? (
+          <img src={this.state.image1} alt="flag of a country" />
+        ) : null}
+
         <div
           className="next_component"
           style={{
@@ -133,16 +129,21 @@ export class Trivia2 extends Component {
 const mapStateToProps = (state) => {
   return {
     answer: state.answer,
+    used: state.used,
+    score: state.score,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addAnswer: (answer) => {
-      dispatch(addAnswer(answer));
+    addUsedCountry: (answer) => {
+      dispatch(addUsedCountry(answer));
     },
-    resetStore: () => {
-      dispatch(resetStore());
+    removeUsedCountry: () => {
+      dispatch(removeUsedCountry());
+    },
+    countScore: () => {
+      dispatch(countScore());
     },
   };
 };

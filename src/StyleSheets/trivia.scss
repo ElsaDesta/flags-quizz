@@ -2,14 +2,9 @@ button {
   border: none;
 }
 .flag {
-  width: 95%;
-  /* width: fit-content; */
-  /* height: 95%; */
-  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
   transition: width 2s, height 2s;
-  /* display: flex; */
-  /* justify-self: center; */
-  /* align-items: center; */
 }
 .main_wrapper {
   //height: 95vh;
@@ -40,10 +35,11 @@ button {
   justify-content: center;
   width: 250px;
   height: 150px;
+  overflow: hidden;
 }
 .answer_component {
   display: flex;
-  width: 250px;
+  width: 280px;
   align-items: center;
   //padding-bottom: 15px;
   margin-bottom: 25px;
@@ -55,26 +51,29 @@ button {
   border-radius: 10px;
   background-color: #fffbfb;
 }
-.btn_answer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 30px;
-  background-color: white;
-  font-family: "Roboto";
-  text-decoration: none;
-  margin-bottom: 20px;
-  font-weight: 500;
-  font-size: 1.1em;
-  color: #262626;
-  transition-duration: 0.5s;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  &:focus {
-    outline: none;
+
+  .btn_answer {
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    width: 250px;
+    height: 60px;
+    background-color: white;
+    font-family: "Roboto";
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 1.1em;
+    color: #262626;
+    transition-duration: 0.5s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-align: initial;
+    &:focus {
+    outline: thin;
   }
 }
+
 .btn_answer:hover {
   background-color: #37eee6;
   color: #262626;
@@ -86,6 +85,7 @@ button {
   //margin-top: 30px;
   justify-content: center;
   display: flex;
+  visibility: visible;
   padding-bottom: 40px;
 }
 .btn_next {
@@ -153,32 +153,26 @@ button {
   align-self: center;
   text-align: center;
   align-items: center;
+  visibility: hidden;
 }
-.score-board {
+
+.top_wrapper {
   display: flex;
+  width: 100%;
+}
+.top_right {
+  display: flex;
+  width: 50%;
   justify-content: center;
-  align-items: center;
 }
-.score {
-  font-family: "Roboto";
-  font-size: 1rem;
-  align-self: center;
-  text-align: center;
-  color: #262626;
+.top_left {
+  display: flex;
+  width: 50%;
+  justify-content: center;
 }
-.score span {
-  font-family: "Roboto";
-  color: #262626;
-  // transition-delay: 2s;
-  // animation-name: score;
-  // animation-duration: 4s;
-  // animation-direction: reverse;
+
+.link-play {
+  text-decoration: none;
+  pointer-events: none;
+  cursor: none;
 }
-// @keyframes score {
-//   from {
-//     color: #262626;
-//   }
-//   to {
-//     color: white;
-//   }
-// }
