@@ -10,16 +10,14 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div className="App" data-test="app">
+
           <Route path="/">
             <Navbar  />
           </Route>
           <Switch>
-            <Route path="/triviascreen">
-              <TriviaScreen />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+            <Route path="/triviascreen" component={TriviaScreen} />
+             <Route path="/" component={Home} />
+
           </Switch>
         </div>
       </BrowserRouter>
