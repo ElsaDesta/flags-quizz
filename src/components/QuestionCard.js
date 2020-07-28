@@ -3,6 +3,7 @@ import React from "react";
 const QuestionCard = (props) => {
   const flash = props.flash;
   const options = props.options;
+  const disabled = props.disabled;
 
   return (
     <div className="game_wrapper">
@@ -17,18 +18,23 @@ const QuestionCard = (props) => {
       </div>
 
       <div className="answer_component">
-        <h3 style={{ visibility: flash? 'visible': 'hidden' }} className="flash">{flash}</h3>
+        <h3
+          style={{ visibility: flash ? "visible" : "hidden" }}
+          className="flash"
+        >
+          {flash}
+        </h3>
         {options
           ? options.map((el, index) => (
-
-                <button key={index}
-                  className="btn_answer"
-                  onClick={props.onClick}
-                  value={el}
-                >
-                  {el}
-                </button>
-
+              <button
+                key={index}
+                disabled={disabled}
+                className="btn_answer"
+                onClick={props.onClick}
+                value={el}
+              >
+                {el}
+              </button>
             ))
           : null}
       </div>

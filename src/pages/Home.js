@@ -55,25 +55,23 @@ class Home extends Component {
         </section>
 
         <div className="play-component">
-          <NavLink className="play-btn" onClick={this.handlePlay} to="/triviascreen">
-          <button
-
+          <NavLink
             className="play-btn"
-            disabled={this.state.disabled}
+            onClick={this.handlePlay}
+            to="/triviascreen"
           >
-
+            <button className="play-btn" disabled={this.state.disabled}>
               {" "}
               Play{" "}
-
-          </button>{" "}
-            </NavLink>
+            </button>{" "}
+          </NavLink>
         </div>
         <div className="rules-component">
           <p>Rules</p>
-          <span className="rules">
+          {/* <span className="rules">
             Choose the country that matches the flag. Click on the question icon
             to get a hint.
-          </span>
+          </span> */}
         </div>
       </div>
     );

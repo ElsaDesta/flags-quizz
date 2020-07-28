@@ -22,6 +22,7 @@ export class TriviaScreen extends Component {
     flash: "",
     selected: "",
     currentQuestion: "",
+    disabled: false
   };
 
   buildQuiz = () => {
@@ -43,22 +44,22 @@ export class TriviaScreen extends Component {
 
   handleNextQuestion = (e) => {
     if (this.state.currentQuestion >= this.props.choice) {
-      this.setState({ flash: "game over!" });
+      this.setState({ flash: "game over!", disabled: true });
     } else {
       this.setState((prevState) => ({
         currentQuestion: prevState.currentQuestion + 1,
       }));
       this.buildQuiz();
-      this.setState({ flash: "" });
+      this.setState({ flash: "" , disabled: false});
     }
   };
 
   handleAnswerInput = (event) => {
     if (event.target.value === this.state.quiz) {
       this.props.countScore();
-      this.setState({ flash: "CORRECT!" });
+      this.setState({ flash: "CORRECT!", disabled: true });
     } else {
-      this.setState({ flash: "WRONG!" });
+      this.setState({ flash: "WRONG!", disabled: true });
     }
   };
 
@@ -88,6 +89,7 @@ export class TriviaScreen extends Component {
           options={options}
           quizSvg={quizSvg}
           flash={flash}
+          disabled={this.state.disabled}
         />
 
         <div

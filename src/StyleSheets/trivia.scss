@@ -52,24 +52,24 @@ button {
   background-color: #fffbfb;
 }
 
-  .btn_answer {
-    /* display: flex; */
-    /* justify-content: center; */
-    align-items: center;
-    width: 250px;
-    height: 60px;
-    background-color: white;
-    font-family: "Roboto";
-    text-decoration: none;
-    margin-bottom: 10px;
-    font-weight: 500;
-    font-size: 1.1em;
-    color: #262626;
-    transition-duration: 0.5s;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    text-align: initial;
-    &:focus {
+.btn_answer {
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+  width: 250px;
+  height: 60px;
+  background-color: white;
+  font-family: "Roboto";
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 1.1em;
+  color: #262626;
+  transition-duration: 0.5s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-align: initial;
+  &:focus {
     outline: thin;
   }
 }
