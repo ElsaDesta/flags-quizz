@@ -12,7 +12,7 @@ export default class App extends Component {
       <BrowserRouter>
         <div className="app-wrapper">
           <Route path="/">
-            <Navbar onClick={this.handleOpen} opened={this.state.opened} />
+            <Navbar  />
           </Route>
 
           <Switch>

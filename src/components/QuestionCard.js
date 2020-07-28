@@ -3,7 +3,7 @@ import React from "react";
 const QuestionCard = (props) => {
   const flash = props.flash;
   const options = props.options;
-  const disabled = props.disabled;
+
 
   return (
     <div className="game_wrapper">
@@ -28,7 +28,7 @@ const QuestionCard = (props) => {
           ? options.map((el, index) => (
               <button
                 key={index}
-                disabled={disabled}
+                disabled={props.disabled}
                 className="btn_answer"
                 onClick={props.onClick}
                 value={el}
