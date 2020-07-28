@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/flags-quizz/static/css/main.78b98a5d.chunk.css",
+    "main.css": "/flags-quizz/static/css/main.17232fee.chunk.css",
     "main.js": "/flags-quizz/static/js/main.1d68ad07.chunk.js",
     "main.js.map": "/flags-quizz/static/js/main.1d68ad07.chunk.js.map",
     "runtime-main.js": "/flags-quizz/static/js/runtime-main.291a54ed.js",
@@ -8,9 +8,9 @@
     "static/js/2.8f7bda44.chunk.js": "/flags-quizz/static/js/2.8f7bda44.chunk.js",
     "static/js/2.8f7bda44.chunk.js.map": "/flags-quizz/static/js/2.8f7bda44.chunk.js.map",
     "index.html": "/flags-quizz/index.html",
-    "precache-manifest.30eda49b33bcb5bad997a2e2e6cb1880.js": "/flags-quizz/precache-manifest.30eda49b33bcb5bad997a2e2e6cb1880.js",
+    "precache-manifest.89805941fa496956004f384ac5cdbe44.js": "/flags-quizz/precache-manifest.89805941fa496956004f384ac5cdbe44.js",
     "service-worker.js": "/flags-quizz/service-worker.js",
-    "static/css/main.78b98a5d.chunk.css.map": "/flags-quizz/static/css/main.78b98a5d.chunk.css.map",
+    "static/css/main.17232fee.chunk.css.map": "/flags-quizz/static/css/main.17232fee.chunk.css.map",
     "static/js/2.8f7bda44.chunk.js.LICENSE.txt": "/flags-quizz/static/js/2.8f7bda44.chunk.js.LICENSE.txt",
     "static/media/ad.svg": "/flags-quizz/static/media/ad.b8bed3d2.svg",
     "static/media/ae.svg": "/flags-quizz/static/media/ae.009d6c00.svg",
@@ -273,7 +273,7 @@
   "entrypoints": [
     "static/js/runtime-main.291a54ed.js",
     "static/js/2.8f7bda44.chunk.js",
-    "static/css/main.78b98a5d.chunk.css",
+    "static/css/main.17232fee.chunk.css",
     "static/js/main.1d68ad07.chunk.js"
   ]
 }
