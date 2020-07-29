@@ -1,44 +1,37 @@
 import React from "react";
 
 const QuestionCard = (props) => {
-  const flash = props.flash;
   const options = props.options;
 
-
   return (
-    <div className="game_wrapper">
-      <div className="header_component"></div>
-      <div className="question_component">
-        <img className="flag" src={props.quizSvg} alt="icon-flag-country" />
-      </div>
+    <>
+      <figure className="question_component" data-test="question-component">
+        <img className="flag" src={props.quizSvg} alt={props.quiz} />
+      </figure>
 
       <div className="btn_hint">
         <span className="hint-icon">?!</span>
-        <span className="hint">Hint coming soon</span>
+        <p className="hint">Hint coming soon</p>
       </div>
 
-      <div className="answer_component">
-        <h3
-          style={{ visibility: flash ? "visible" : "hidden" }}
-          className="flash"
-        >
-          {flash}
-        </h3>
+      <div className="answer_component" data-testid="answer-component">
+        <h3>{props.flash}</h3>
         {options
-          ? options.map((el, index) => (
+          ? options.map((el) => (
               <button
-                key={index}
+                key={el}
                 disabled={props.disabled}
                 className="btn_answer"
                 onClick={props.onClick}
                 value={el}
+                type="button"
               >
                 {el}
               </button>
             ))
-          : null}
+          : "loading..."}
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {NavLink } from "react-router-dom";
+import {Link } from "react-router-dom";
 import "../StyleSheets/navbar.scss";
 import homesvg from "../images/home.svg";
 
@@ -9,7 +9,7 @@ const Navbar = (props) => {
     <nav className="top-nav">
       <ul>
         <li className="nav-home-icon">
-<NavLink to="/"> <img src={homesvg} alt="home icon" /></NavLink>
+<Link to="/"> <img src={homesvg} alt="home icon" /></Link>
         </li>
       </ul>
     </nav>

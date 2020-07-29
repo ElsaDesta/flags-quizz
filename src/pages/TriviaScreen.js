@@ -20,9 +20,8 @@ export class TriviaScreen extends Component {
     quiz: "",
     quizSvg: "",
     flash: "",
-    selected: "",
     currentQuestion: "",
-    disabled: false
+    disabled: false,
   };
 
   buildQuiz = () => {
@@ -50,7 +49,7 @@ export class TriviaScreen extends Component {
         currentQuestion: prevState.currentQuestion + 1,
       }));
       this.buildQuiz();
-      this.setState({ flash: "" , disabled: false});
+      this.setState({ flash: "", disabled: false });
     }
   };
 
@@ -69,7 +68,7 @@ export class TriviaScreen extends Component {
   };
 
   render() {
-    const { options, quizSvg, flash } = this.state;
+    const { options, quizSvg, flash, quiz } = this.state;
     return (
       <div className="main_wrapper">
         <div className="top_wrapper">
@@ -79,30 +78,19 @@ export class TriviaScreen extends Component {
           <div className="top_left">
             {" "}
             <h3>
-             Question:{this.state.currentQuestion}/{this.props.choice}
+              Question:{this.state.currentQuestion}/{this.props.choice}
             </h3>{" "}
           </div>
         </div>
 
         <QuestionCard
-          onClick={this.handleAnswerInput}
-          options={options}
-          quizSvg={quizSvg}
-          flash={flash}
-          disabled={this.state.disabled}
+         {...this.props}
         />
 
-        <div
-          className="next_component"
-          style={{
-            visibility: flash === "game over!" ? false : true,
-          }}
-        >
-          <button className="btn_next" onClick={this.handleNextQuestion}>
-            {" "}
-            next question
-          </button>
-        </div>
+        <button className="btn_next" onClick={this.handleNextQuestion}>
+          {" "}
+          next question
+        </button>
       </div>
     );
   }

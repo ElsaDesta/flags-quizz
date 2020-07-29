@@ -1,8 +1,9 @@
 import "../StyleSheets/Home.scss";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addChoice, removeChoice } from "../action";
+import Options from "../components/Options";
 
 class Home extends Component {
   state = {
@@ -13,13 +14,15 @@ class Home extends Component {
   componentDidMount() {
     this.props.removeChoice();
   }
+
+  /* prevent play button if no option has been selected*/
   handlePlay = (e) => {
     this.state.disabled
       ? e.preventDefault()
       : this.props.addChoice(this.state.selectedOption);
   };
 
-  setOption = (e) => {
+  selectOption = (e) => {
     console.log(e.target.value);
     this.setState({
       selectedOption: e.target.value,
@@ -29,43 +32,25 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="home-game_wrapper">
+      <>
+
         <header className="home-header">
           <h1>Flags Trivia</h1>
         </header>
-        <section className="options-wrapper">
-          <p>Choose number of questions</p>
-          <div className="radio-btns" onChange={this.setOption}>
-            <label>
-              <input type="radio" value="5" name="option" />5
-            </label>
-            <label>
-              <input type="radio" value="10" name="option" />
-              10
-            </label>
-            <label>
-              <input type="radio" value="15" name="option" />
-              15
-            </label>
-            <label>
-              <input type="radio" value="20" name="option" />
-              20
-            </label>
-          </div>
+        <section className="options-wrapper" name="select option" role="main" >
+          <p role="contentinfo">Choose number of questions</p>
+          <Options onChange={this.selectOption} />
         </section>
+            <nav> <Link
+          onClick={this.handlePlay}
+          className="play-btn"
+          disabled={this.state.disabled}
+          to="/triviascreen"
+        >
+          {" "}
+          Play
+                  </Link>{" "}</nav>
 
-        <div className="play-component">
-          <NavLink
-            className="play-btn"
-            onClick={this.handlePlay}
-            to="/triviascreen"
-          >
-            <button className="play-btn" disabled={this.state.disabled}>
-              {" "}
-              Play{" "}
-            </button>{" "}
-          </NavLink>
-        </div>
         <div className="rules-component">
           <p>Rules</p>
           {/* <span className="rules">
@@ -73,7 +58,7 @@ class Home extends Component {
             to get a hint.
           </span> */}
         </div>
-      </div>
+     </>
     );
   }
 }

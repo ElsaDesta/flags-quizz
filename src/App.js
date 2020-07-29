@@ -1,7 +1,7 @@
 import "./StyleSheets/global.scss";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route,  Switch } from "react-router-dom";
 import React, { Component } from "react";
 import TriviaScreen from "./pages/TriviaScreen";
 
@@ -24,3 +24,4 @@ export default class App extends Component {
     );
   }
 }
+

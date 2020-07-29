@@ -33,7 +33,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "plugin:jsx-a11y/recommended"
+    ]
   },
   "browserslist": {
     "production": [
@@ -48,6 +51,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^2.2.0",
+    "react-axe": "^3.5.3"
   }
 }
