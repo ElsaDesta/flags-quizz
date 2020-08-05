@@ -2,9 +2,11 @@ import React from "react";
 
 export default function Options(props) {
   return (
-    <div className="radio-btns" onChange={props.onChange}>
+    <fieldset className="radio-btns" onChange={props.onChange}>
+      <legend>Choose number of questions</legend>
       <label>
-        <input type="radio" value="5" name="option" />5
+        <input type="radio" value="5" name="option" />
+        5
       </label>
       <label>
         <input type="radio" value="10" name="option" />
@@ -18,6 +20,6 @@ export default function Options(props) {
         <input type="radio" value="20" name="option" />
         20
       </label>
-    </div>
+    </fieldset>
   );
 }

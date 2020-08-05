@@ -5,7 +5,8 @@ const getRandomCountry = (countryData, used) => {
   let randomCountry = Object.values(countryData)[
     Math.floor(Math.random() * arrayLength)
   ].toString();
-  if (used.includes(randomCountry || used.lenght > 20)) {
+
+  if (used.includes(randomCountry)) {
     return getRandomCountry(countryData, used);
   }
 

@@ -7,6 +7,7 @@ import {
   addUsedCountry,
   countScore,
   addChoice,
+  removeScore,
 } from "../action";
 import getRandomCountry from "../helpers/getRandomCountry";
 import getMultiCountries from "../helpers/getMultiCountries";
@@ -14,6 +15,7 @@ import shuffle from "../helpers/shuffle";
 import getSvg from "../helpers/getSvgCountryFlag";
 import getCountryios from "../helpers/getCountryios";
 import allCountries from "../API/countries.json";
+import ScoreBar from "../components/ScoreBar";
 
 export class TriviaScreen extends Component {
   state = {
@@ -24,21 +26,30 @@ export class TriviaScreen extends Component {
     disabled: false,
   };
 
-  buildQuiz = () => {
-    const { used } = this.props;
-    let randomCountry = getRandomCountry(allCountries, used);
-    console.log(randomCountry);
-    let randomChoices = getMultiCountries(allCountries);
-    let allOptions = shuffle([randomCountry, ...randomChoices]);
-    let ios = getCountryios(allCountries, randomCountry);
-    let image = getSvg(ios);
-    this.setState({ quiz: randomCountry, quizSvg: image, options: allOptions });
-    this.props.addUsedCountry(randomCountry);
+  buildQuiz = async () => {
+    try {
+      const { used } = this.props;
+      const randomCountry = await getRandomCountry(allCountries, used);
+      this.setState({ quiz: randomCountry });
+      this.props.addUsedCountry(randomCountry);
+
+      const randomChoices = await getMultiCountries(allCountries);
+
+      const allOptions = await shuffle([randomCountry, ...randomChoices]);
+      this.setState({ options: allOptions });
+
+      const ios = await getCountryios(allCountries, randomCountry);
+      const image = await getSvg(ios);
+      this.setState({ quizSvg: image });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   componentDidMount() {
     this.buildQuiz();
     this.setState({ currentQuestion: 1 });
+    this.props.removeScore();
   }
 
   handleNextQuestion = (e) => {
@@ -68,23 +79,22 @@ export class TriviaScreen extends Component {
   };
 
   render() {
-    const { options, quizSvg, flash, quiz } = this.state;
+    const { options, quizSvg, flash, quiz, currentQuestion } = this.state;
     return (
       <div className="main_wrapper">
-        <div className="top_wrapper">
-          <div className="top_right">
-            <h3>Score:{this.props.score}</h3>{" "}
-          </div>
-          <div className="top_left">
-            {" "}
-            <h3>
-              Question:{this.state.currentQuestion}/{this.props.choice}
-            </h3>{" "}
-          </div>
-        </div>
+        <ScoreBar
+          currentQuestion={currentQuestion}
+          score={this.props.score}
+          choice={this.props.choice}
+        />
 
         <QuestionCard
-         {...this.props}
+          onClick={this.handleAnswerInput}
+          options={options}
+          quizSvg={quizSvg}
+          flash={flash}
+          disabled={this.state.disabled}
+          quiz={quiz}
         />
 
         <button className="btn_next" onClick={this.handleNextQuestion}>
@@ -119,7 +129,13 @@ const mapDispatchToProps = (dispatch) => {
     addChoice: (number) => {
       dispatch(addChoice(number));
     },
+    removeScore: () => {
+      dispatch(removeScore());
+    },
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TriviaScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(
+  TriviaScreen,
+  ScoreBar
+);

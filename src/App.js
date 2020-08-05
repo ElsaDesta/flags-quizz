@@ -8,9 +8,9 @@ import TriviaScreen from "./pages/TriviaScreen";
 export default class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <div className="App" data-test="app">
 
+        <div className="App" data-test="app">
+ <BrowserRouter>
           <Route path="/">
             <Navbar  />
           </Route>
@@ -19,8 +19,9 @@ export default class App extends Component {
              <Route path="/" component={Home} />
 
           </Switch>
+        </BrowserRouter>
         </div>
-      </BrowserRouter>
+
     );
   }
 }

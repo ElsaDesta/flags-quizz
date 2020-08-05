@@ -1,12 +1,13 @@
-import React from "react";
+import React, {Component} from "react";
 
-const QuestionCard = (props) => {
-  const options = props.options;
+ class QuestionCard extends  Component {
 
+  render() {
+const {options, quizSvg} = this.props;
   return (
     <>
       <figure className="question_component" data-test="question-component">
-        <img className="flag" src={props.quizSvg} alt={props.quiz} />
+  {quizSvg?    <img className="flag" src={quizSvg} alt='country flag' /> : "loading..."}
       </figure>
 
       <div className="btn_hint">
@@ -15,16 +16,16 @@ const QuestionCard = (props) => {
       </div>
 
       <div className="answer_component" data-testid="answer-component">
-        <h3>{props.flash}</h3>
+        <h3>{this.props.flash}</h3>
         {options
-          ? options.map((el) => (
+          ? this.props.options.map((el, index) => (
               <button
-                key={el}
-                disabled={props.disabled}
+                key={index}
+                disabled={this.props.disabled}
                 className="btn_answer"
-                onClick={props.onClick}
-                value={el}
+                onClick={this.props.onClick}
                 type="button"
+                value={el}
               >
                 {el}
               </button>
@@ -32,7 +33,8 @@ const QuestionCard = (props) => {
           : "loading..."}
       </div>
     </>
-  );
+  )
+          }
 };
 
 export default QuestionCard;

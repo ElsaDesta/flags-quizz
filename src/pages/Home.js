@@ -33,32 +33,30 @@ class Home extends Component {
   render() {
     return (
       <>
-
         <header className="home-header">
           <h1>Flags Trivia</h1>
         </header>
-        <section className="options-wrapper" name="select option" role="main" >
-          <p role="contentinfo">Choose number of questions</p>
+        <main>
           <Options onChange={this.selectOption} />
-        </section>
-            <nav> <Link
-          onClick={this.handlePlay}
-          className="play-btn"
-          disabled={this.state.disabled}
-          to="/triviascreen"
-        >
-          {" "}
-          Play
-                  </Link>{" "}</nav>
+          <Link
+            onClick={this.handlePlay}
+            className="play-btn"
+            disabled={this.state.disabled}
+            to="/triviascreen"
+          >
+            {" "}
+            Play
+          </Link>{" "}
+        </main>
 
-        <div className="rules-component">
+        {/* <div className="rules-component">
           <p>Rules</p>
-          {/* <span className="rules">
-            Choose the country that matches the flag. Click on the question icon
+          <span className="rules">
+            Select the country that matches the flag. Click on the question icon
             to get a hint.
-          </span> */}
-        </div>
-     </>
+          </span>
+        </div> */}
+      </>
     );
   }
 }
