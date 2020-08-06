@@ -1,6 +1,12 @@
 import {combineReducers} from "redux";
-import answerReducer from "./answerReducer";
+
+import usedReducer from "./usedReducer";
+import score from "./score";
+import choice from "./choice";
 
 export default combineReducers({
-    answer: answerReducer
+
+    used: usedReducer,
+    score: score,
+    choice: choice
 });

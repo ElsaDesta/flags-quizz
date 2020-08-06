@@ -1,39 +1,28 @@
 import "./StyleSheets/global.scss";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Trivia2 from "./pages/trivia2";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route,  Switch } from "react-router-dom";
 import React, { Component } from "react";
+import TriviaScreen from "./pages/TriviaScreen";
 
 export default class App extends Component {
-  state = {
-    opened: false,
-  };
-
-  handleOpen = () => {
-    const { opened } = this.state;
-    this.setState({
-      opened: !opened,
-    });
-  };
-
   render() {
     return (
-      <BrowserRouter>
-        <div className="app-wrapper">
+
+        <div className="App" data-test="app">
+ <BrowserRouter>
           <Route path="/">
-            <Navbar onClick={this.handleOpen} opened={this.state.opened} />
+            <Navbar  />
           </Route>
-
           <Switch>
-            <Route path="/trivia" component={Trivia2} />
+            <Route path="/triviascreen" component={TriviaScreen} />
+             <Route path="/" component={Home} />
 
-            <Route path="/">
-              <Home />
-            </Route>
           </Switch>
+        </BrowserRouter>
         </div>
-      </BrowserRouter>
+
     );
   }
 }
+

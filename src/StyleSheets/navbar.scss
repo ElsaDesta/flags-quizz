@@ -1,36 +1,24 @@
+@import"./global.scss";
 img {
-  width: 1.3em;
+  width: 1.2em;
+  justify-self: center;
 }
 .top-nav {
   overflow: hidden;
-  //margin-top: 5px;
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  background-color: $darkblue ;
+  width: 100%;
+  }
+li {
+  list-style-type: none;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
   justify-content: center;
-  border-bottom: 0.1px grey solid;
-  box-shadow: 0 1px 1px grey; 
-  background-color: #fffbfb ; 
+  display: flex;
+  align-items: center;
+ margin: 0;
 }
-.home-nav,
-.link-nav,
-.play-nav {
-  //float: left;
-  cursor: pointer;
-  //color: #262626;
-  padding: 12px 16px;
-  
-  &:hover {
-    background-color: #f2ae2e;
-  }
-  &:active {
-    background-color: #f2ae2e;
-  }
-}
-
-// .play-nav,
-
-// .link-nav {
-//   display: flex;
-// }
-
 
