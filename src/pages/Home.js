@@ -2,8 +2,10 @@ import "../StyleSheets/Home.scss";
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-//import { addChoice, removeChoice } from "../action";
+import { addChoice, removeChoice } from "../action";
 import Options from "../components/Options";
+
+
 
 export class Home extends Component {
   state = {
@@ -11,9 +13,7 @@ export class Home extends Component {
     disabled: true,
   };
 
-  // componentDidMount() {
-  //   this.props.removeChoice();
-  // }
+
 
   /* prevent play button if no option has been selected*/
   handlePlay = (e) => {
@@ -28,6 +28,7 @@ export class Home extends Component {
       selectedOption: e.target.value,
       disabled: false,
     });
+    this.props.removeChoice()
   };
 
   render() {
@@ -38,7 +39,7 @@ export class Home extends Component {
         </header>
         <main>
           <Options onChange={this.selectOption} data-test="option-component" />
-          {/* <Link
+          <Link
             onClick={this.handlePlay}
             className="play-btn"
             disabled={this.state.disabled}
@@ -46,21 +47,20 @@ export class Home extends Component {
           >
             {" "}
             Play
-          </Link>{" "} */}
+          </Link>{" "}
         </main>
 
-        {/* <div className="rules-component">
+        <div className="rules-component">
           <p>Rules</p>
           <span className="rules">
             Select the country that matches the flag. Click on the question icon
             to get a hint.
           </span>
-        </div> */}
+        </div>
       </div>
     );
   }
 }
-
 const mapStateToProps = (state) => {
   return {
     used: state.used,

@@ -4,6 +4,7 @@ import { render, screen, cleanup } from "@testing-library/react";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "../../reducer";
+import {MemoryRouter } from "react-router-dom";
 
 // afterEach(cleanup);
 // it('Renders the connected Home component with initialState', () => {
@@ -17,7 +18,12 @@ const renderComponent = (
   { initialState, store = createStore(rootReducer, initialState) } = {}
 ) => {
   return {
-    ...render(<Provider store={store}> {component}</Provider>),
+    ...render(
+      <MemoryRouter>
+        {" "}
+        <Provider store={store}> {component}</Provider>
+      </MemoryRouter>
+    ),
     store,
   };
 };

@@ -32,15 +32,15 @@ export class TriviaScreen extends Component {
       const randomCountry = await getRandomCountry(allCountries, used);
       this.setState({ quiz: randomCountry });
       this.props.addUsedCountry(randomCountry);
+const ios = getCountryios(allCountries, randomCountry);
+      const image =  getSvg(ios);
+      this.setState({ quizSvg: image });
+      const randomChoices =  getMultiCountries(allCountries);
 
-      const randomChoices = await getMultiCountries(allCountries);
-
-      const allOptions = await shuffle([randomCountry, ...randomChoices]);
+      const allOptions = shuffle([randomCountry, ...randomChoices]);
       this.setState({ options: allOptions });
 
-      const ios = await getCountryios(allCountries, randomCountry);
-      const image = await getSvg(ios);
-      this.setState({ quizSvg: image });
+
     } catch (err) {
       console.log(err);
     }
@@ -73,10 +73,6 @@ export class TriviaScreen extends Component {
     }
   };
 
-  handleOption = (e) => {
-    this.props.addChoice(e.target.value);
-    this.setState({ selected: e.target.value });
-  };
 
   render() {
     const { options, quizSvg, flash, quiz, currentQuestion } = this.state;
