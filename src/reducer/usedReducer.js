@@ -1,14 +1,14 @@
-import {ADD_USED_COUNTRY, REMOVE_USED_COUNTRY} from "../action/types";
+import { ADD_USED_COUNTRY, REMOVE_USED_COUNTRY } from "../action/types";
 
+const initialState = [];
 
-const initState =[];
-export default function usedReducer(state= initState, action) {
- switch (action.type) {
-     case ADD_USED_COUNTRY:
-         return [...state, action.used]
+export default function (state = initialState, action) {
+  switch (action.type) {
+    case ADD_USED_COUNTRY:
+      return [...state, action.used];
     case REMOVE_USED_COUNTRY:
-        return initState
-     default:
-         return state
- }
+      return initialState;
+    default:
+      return state;
+  }
 }

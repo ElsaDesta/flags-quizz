@@ -2,18 +2,18 @@ import "../StyleSheets/Home.scss";
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addChoice, removeChoice } from "../action";
+//import { addChoice, removeChoice } from "../action";
 import Options from "../components/Options";
 
-class Home extends Component {
+export class Home extends Component {
   state = {
     selectedOption: "",
     disabled: true,
   };
 
-  componentDidMount() {
-    this.props.removeChoice();
-  }
+  // componentDidMount() {
+  //   this.props.removeChoice();
+  // }
 
   /* prevent play button if no option has been selected*/
   handlePlay = (e) => {
@@ -32,13 +32,13 @@ class Home extends Component {
 
   render() {
     return (
-      <>
+      <div data-test="home-component">
         <header className="home-header">
           <h1>Flags Trivia</h1>
         </header>
         <main>
-          <Options onChange={this.selectOption} />
-          <Link
+          <Options onChange={this.selectOption} data-test="option-component" />
+          {/* <Link
             onClick={this.handlePlay}
             className="play-btn"
             disabled={this.state.disabled}
@@ -46,7 +46,7 @@ class Home extends Component {
           >
             {" "}
             Play
-          </Link>{" "}
+          </Link>{" "} */}
         </main>
 
         {/* <div className="rules-component">
@@ -56,7 +56,7 @@ class Home extends Component {
             to get a hint.
           </span>
         </div> */}
-      </>
+      </div>
     );
   }
 }
