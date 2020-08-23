@@ -5,15 +5,11 @@ import { connect } from "react-redux";
 import { addChoice, removeChoice } from "../action";
 import Options from "../components/Options";
 
-
-
 export class Home extends Component {
   state = {
     selectedOption: "",
     disabled: true,
   };
-
-
 
   /* prevent play button if no option has been selected*/
   handlePlay = (e) => {
@@ -28,11 +24,13 @@ export class Home extends Component {
       selectedOption: e.target.value,
       disabled: false,
     });
-    this.props.removeChoice()
+    this.props.removeChoice();
   };
 
   render() {
+
     return (
+
       <div data-test="home-component">
         <header className="home-header">
           <h1>Flags Trivia</h1>
@@ -42,8 +40,10 @@ export class Home extends Component {
           <Link
             onClick={this.handlePlay}
             className="play-btn"
-            disabled={this.state.disabled}
+
+           disabled={this.state.disabled}
             to="/triviascreen"
+            name="play"
           >
             {" "}
             Play

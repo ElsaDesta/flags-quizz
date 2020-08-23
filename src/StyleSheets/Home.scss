@@ -61,8 +61,11 @@ button {
     min-width: max-content;
 }
 
-input {
+input[type="radio"] {
   background: yellow;
+}
+input[aria-checked="true"]{
+  background-color: yellowgreen;
 }
 .play-btn {
   width: 70px;

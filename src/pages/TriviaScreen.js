@@ -33,7 +33,7 @@ export class TriviaScreen extends Component {
       this.setState({ quiz: randomCountry });
       this.props.addUsedCountry(randomCountry);
 const ios = getCountryios(allCountries, randomCountry);
-      const image =  getSvg(ios);
+      const image =  await getSvg(ios);
       this.setState({ quizSvg: image });
       const randomChoices =  getMultiCountries(allCountries);
 
